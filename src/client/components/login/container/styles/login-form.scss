@@ -1,0 +1,35 @@
+.login{
+    margin: auto;
+    h1{
+        font-size: 20px;
+    }
+    .login-block{
+        position: relative;
+        .bmd-label-floating{
+            //position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            line-height: 46px;
+            color: rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            -webkit-transition: all .1s ease-in-out;
+            transition: all .1s ease-in-out;
+        }
+        input{
+            border: 1px solid #dde5eb;
+            height: 48px;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 1.31;
+            color: #465166;
+            width: 100%
+        }
+        input:placeholder-shown ~ label{
+            color: #000;
+        }
+        .red-border{
+            border-color: red;
+        }
+    }
+}
