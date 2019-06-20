@@ -10,6 +10,7 @@ export default function LoginForm (props) {
         onsubmit,
         showError,
         errorMessage,
+        isSubmitting
     } =  props;
     
     return (
@@ -71,6 +72,7 @@ export default function LoginForm (props) {
                     type="submit"
                     className="btn btn-primary btn-raised"
                      onClick={(e)=>onsubmit(e)}
+                     disabled = {(showError.password) || (showError.username) || (isSubmitting)}
                 >Login</button>
             </form>
         </div>

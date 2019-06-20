@@ -54,11 +54,14 @@ export default class Login extends Component {
         let showError = {...this.state.showError};
         let isValid = {...this.state.isValid};
         let inputValue = e.target.value.trim();
+        let isSubmitting = this.state.isSubmitting;
         debugger;
         if(name === 'username' && inputValue.length >= 8){
             showError[name] = false;
+            isSubmitting = false
         } else {
             showError[name] = true;
+            isSubmitting = true;
         }
         this.setState({showError});
         console.log(showError.username);
@@ -67,13 +70,15 @@ export default class Login extends Component {
                 showError[name] = false;
                 isValid[name] = true;
                 console.log(showError.password);
+                isSubmitting = false;
             } else {
                 showError[name] = true;
                 isValid[name] = false;
                 console.log(showError.password);
+                isSubmitting = true;
             }
         }
-        this.setState({showError, isValid});
+        this.setState({showError, isValid, isSubmitting});
     }
     onInputChange(e, name) {
         let loginDetails = {...this.state.loginDetails};
@@ -115,6 +120,7 @@ export default class Login extends Component {
                     onBlurHandle={this.onBlurHandle}
                     onInputChange={this.onInputChange}
                     onsubmit={this.onsubmit}
+                    isSubmitting= {this.state.isSubmitting}
                 />
             </div>
         )
