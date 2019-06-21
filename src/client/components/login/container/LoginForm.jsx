@@ -1,7 +1,8 @@
 import React from 'react'
 import './styles/login-form.scss';
+import "../../shared/style/bootstrap.min.css";
 
-export default function LoginForm (props) {
+function LoginForm (props) {
     let{
         values,
         onFocusHandle,
@@ -78,4 +79,6 @@ export default function LoginForm (props) {
         </div>
     )
 }
+
+export default LoginForm
 

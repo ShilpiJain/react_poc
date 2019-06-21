@@ -48,11 +48,14 @@
 // 16. Conditional output
 // if condition and ternary operator
 // 17. Form Revisited
-// 
+// getting value from input on submit and setState
+// 18. function as prop
+// yet to watch
 
 
 import React, { Component } from 'react'
 import Ninja from '../learning/container/index';
+import AddNinja from "../learning/container/addNinja";
 
 class Learning extends Component {
     state = {
@@ -84,20 +87,21 @@ class Learning extends Component {
     render() {
         return (
             <div>
-                {/* Hey, My name is {this.state.name} and age is {this.state.age}.
+                 Hey, My name is {this.state.name} and age is {this.state.age}.
                 <button onClick={this.handleClick}>Click Me</button>
                 <button onMouseOver={this.handleMouse}>Click Me</button>
-                <p onCopy={this.handleCopy}>Don't copy</p> */}
-                Hey, I'm {this.state.name}
+                <p onCopy={this.handleCopy}>Don't copy</p> 
+                 Hey, I'm {this.state.name}
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" onChange={this.handleClick}/>
-                    <button>Submit</button>
+                    <button>Submit</button> 
                 </form>
                 {/* <Ninja name="Shipi" age ="27" belt="Black"/> */}
-                <Ninja ninjas={this.state.ninjas}/>
+                  <Ninja ninjas={this.state.ninjas}/> 
+                <AddNinja/>
             </div>
             
         )
     }
 }
-export default Learning;
+export default Learning
