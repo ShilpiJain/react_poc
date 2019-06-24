@@ -31,4 +31,5 @@ class AddNinja extends Component {
         )
     }
 }
-export default AddNinja;
+
+export default AddNinja

@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-class Profile extends Component {
-    render() {
-        return (
-            <div>
-                profile
-            </div>
-        )
-    }
+function Profile(props){
+    let {
+        handleClick
+    }= props;
+    return (
+        <div>
+            <button onClick={handleClick}>View Profile</button>
+        </div>
+    )
 }
 
 export default Profile

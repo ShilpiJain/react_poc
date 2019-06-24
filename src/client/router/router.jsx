@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Profile from "../components/profile/profile";
 import Login from "../components/login/Login";
 import Learning from "../components/learning/learning";
-
+import Dashboard from "../components/dashboard/dashboard";
 
 const RenderRoutes  = () => {
     return(
@@ -38,5 +38,10 @@ const routes = [
         path : "/learning",
         exact : true,
         component : Learning
+    },
+    {
+        path : "/dashboard",
+        exact : true,
+        component : Dashboard
     }
 ]
