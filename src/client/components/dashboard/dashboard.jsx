@@ -1,7 +1,7 @@
 import React from 'react'
 import data from "../../constants/mockData"
 import Users from "./container/userlist";
-import Profile from "../profile/profile";
+//import Profile from "../profile/profile";
 import Adduser from "../dashboard/container/addUser";
 // import data from "../services/index";
 // import baselink from '../../constants/index';

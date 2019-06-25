@@ -13,18 +13,19 @@ class AddNinja extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        //console.log(this.state);
+        this.props.addNinja(this.state);
     }
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                 <label htmlFor="name">Name :- </label>
-                    <input type="text" id="name" onChange={this.handleChange}/>
+                    <input type="text" id="name" onChange={this.handleChange} required/>
                     <label htmlFor="age">Age :- </label>
-                    <input type="text" id="age" onChange={this.handleChange}/>
-                    <label htmlFor="belt">NBeltame :- </label>
-                    <input type="text" id="belt" onChange={this.handleChange}/>
+                    <input type="text" id="age" onChange={this.handleChange} required/>
+                    <label htmlFor="belt">Belt :- </label>
+                    <input type="text" id="belt" onChange={this.handleChange} required/>
                     <button>Submit</button>
                 </form>
             </div>

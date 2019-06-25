@@ -50,7 +50,11 @@
 // 17. Form Revisited
 // getting value from input on submit and setState
 // 18. function as prop
-// yet to watch
+// Pushing form value (object) in existing array. 
+// 19. Delete data from list
+// filter to detele 
+// 20 recap vitual DOM
+//
 
 
 import React, { Component } from 'react'
@@ -62,10 +66,16 @@ class Learning extends Component {
         // name : 'riya',
         // age : 25
         ninjas : [
-            { name : "Shilpi Jain", age : 24, belt: "red", id: 1 },
-            { name : "Kanika", age : 20, belt: "Black", id: 2 },
-            { name : "Kritica", age : 30, belt: "Green", id: 3 }
-        ]
+            { name : "a", age : 24, belt: "red", id: 1 },
+            { name : "b", age : 20, belt: "Black", id: 2 },
+            { name : "c", age : 30, belt: "Green", id: 3 },
+            { name : "d", age : 24, belt: "red", id: 4 },
+            { name : "e", age : 20, belt: "Black", id: 5 },
+            { name : "f", age : 30, belt: "Green", id: 6 },
+            { name : "g", age : 24, belt: "red", id: 7 },
+            { name : "h", age : 20, belt: "Black", id: 8 },
+            { name : "i", age : 30, belt: "Green", id: 9 }
+        ]        
     }
     handleClick = (e) => {
         this.setState({
@@ -84,6 +94,23 @@ class Learning extends Component {
     handleSubmit(e){
         e.preventDefault();
     }
+    addNinja = (ninja) => {
+        ninja.id = this.state.ninjas.length + 1;
+        let ninjas = [...this.state.ninjas, ninja];
+        this.setState({
+            ninjas : ninjas
+        })
+    }
+
+    deteleNinja = (id) => {
+        let ninjas = this.state.ninjas.filter(ninja => {
+            return ninja.id !== id;
+        })
+        this.setState({
+            ninjas : ninjas
+        })
+       // console.log(ninjas)
+    }
     render() {
         return (
             <div>
@@ -97,8 +124,8 @@ class Learning extends Component {
                     <button>Submit</button> 
                 </form>
                 {/* <Ninja name="Shipi" age ="27" belt="Black"/> */}
-                  <Ninja ninjas={this.state.ninjas}/> 
-                <AddNinja/>
+                <Ninja ninjas={this.state.ninjas} deteleNinja={this.deteleNinja}/> 
+                <AddNinja addNinja={this.addNinja}/>
             </div>
             
         )
