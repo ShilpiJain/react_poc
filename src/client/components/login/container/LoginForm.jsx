@@ -1,19 +1,17 @@
 import React from 'react'
 import './styles/login-form.scss';
+import "../../shared/style/bootstrap.min.css";
 
-
-export default function LoginForm (props) {
+function LoginForm (props) {
     let{
         values,
         onFocusHandle,
         onBlurHandle,
         onInputChange,
         onsubmit,
-        isFocused,
-        hasfocused,
         showError,
         errorMessage,
-        isValid
+        isSubmitting
     } =  props;
     
     return (
@@ -25,9 +23,8 @@ export default function LoginForm (props) {
                     <input
                         type="text"
                         id="username"
-                        className={`form-control" + ${(showError.username && isFocused.username) || (showError.username && hasfocused.username)  ? "red-border": ""}`}
-                        placeholder="Username"
-                        maxLength="10"
+                        className={`form-control" + ${(showError.username)  ? "red-border": ""}`}
+                        placeholder="Enter your Username"
                         onFocus={(event) => {
                             return onFocusHandle(event, 'username');
                         }}
@@ -40,7 +37,7 @@ export default function LoginForm (props) {
                         required
                     />
                     {
-                        (isFocused.username && showError.username) || (showError.username && hasfocused.username) ? <span className="bmd-help">{errorMessage.username}</span> : <></>
+                        (showError.username) ? <span className="bmd-help">{errorMessage.username}</span> : <></>
                     }
                     
                     
@@ -50,9 +47,8 @@ export default function LoginForm (props) {
                     <input
                         type={values.showPassword ? 'text' : 'password'}
                         id="password"
-                        className={`form-control" + ${(isFocused.password && showError.password) || (showError.password && hasfocused.password)  ? "red-border": ""}`}
-                        placeholder="password"
-                        maxLength="10"
+                        className={`form-control" + ${(showError.password) ? "red-border": ""}`}
+                        placeholder="Enter your Password"
                         onFocus={(event) => {
                             return onFocusHandle(event, 'password');
                         }}
@@ -65,16 +61,24 @@ export default function LoginForm (props) {
                         required
                     />
                     {
-                       (isFocused.password && showError.password) || (showError.password && hasfocused.password) ? <span className="bmd-help">{errorMessage.password}</span> : <></>
+                       (showError.password) ? <span className="bmd-help">{errorMessage.password}</span> : <></>
                     }                    
                 </div>
+                <input
+                    type="checkbox"
+                    id="saveDetails"
+                    value="Keep me remember"
+                    />
                 <button
                     type="submit"
                     className="btn btn-primary btn-raised"
                      onClick={(e)=>onsubmit(e)}
+                     disabled = {(showError.password) || (showError.username) || (isSubmitting)}
                 >Login</button>
             </form>
         </div>
     )
 }
+
+export default LoginForm
 
