@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Profile from "../components/profile/profile";
-import Login from "../components/login/Login";
+import Login from "../components/login/login"
 import Learning from "../components/learning/learning";
 import Dashboard from "../components/dashboard/dashboard";
 
