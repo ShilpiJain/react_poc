@@ -21,7 +21,7 @@ import React from 'react'
                 <label htmlFor="company">Company</label>
                 <input className="form-control"  type="text" id="company" onChange={handleChange} required/>
                 <br/>
-                <button className="btn-block" > SUBMIT  </button>
+                <button className="btn-block btn" > SUBMIT  </button>
             </form>
         </div>
     )

@@ -47,14 +47,16 @@
 // UI Component :-  Don't Contain state, Recieve data from props, Concerned UI only, Use function to create
 // 16. Conditional output
 // if condition and ternary operator
-// 17. Form Revisited
+// 17. Form revisited
 // getting value from input on submit and setState
 // 18. function as prop
 // Pushing form value (object) in existing array. 
 // 19. Delete data from list
-// filter to detele 
-// 20 recap vitual DOM
-//
+// Filter to detele object from array
+// 20 Recap vitual DOM
+// 21 css for react application
+// 22  
+
 
 
 import React, { Component } from 'react'

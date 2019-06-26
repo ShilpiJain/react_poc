@@ -5,7 +5,7 @@ function Users(props) {
         handleDelete,
         handleEdit
     } = props;
-    const users = props.userList;  
+    const users = props.userList;   
     return (
         <div>
            <h1 className="text-center">Dashboard</h1> 
@@ -21,8 +21,8 @@ function Users(props) {
                                     <td><a href={`mailTo:${user.email}`}> {user.email}</a></td>
                                     <td> {user.gender}</td>
                                     <td> {user.company}</td>
-                                    <td onClick={handleDelete}> Delete </td>
-                                    <td onClick={handleEdit}> edit </td>
+                                    <td><button className="btn" onClick={()=> {handleDelete(user.id)}}>Delete</button></td>
+                                    <td><button className="btn" onClick={() => {handleEdit(user.id)}}>Edit</button></td>
                                 </tr>
                                 );
                             }
