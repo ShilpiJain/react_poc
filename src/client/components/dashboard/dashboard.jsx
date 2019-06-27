@@ -24,7 +24,7 @@ class Dashboard extends React.Component {
         .then(response => 
             response.json()
         ).then(data => this.setState({
-            userList : data 
+            userList : data
         }));
     }
 

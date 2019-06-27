@@ -1,0 +1,6 @@
+.pointer{
+    cursor: pointer;
+}
+.pointer:hover{
+    text-decoration: line-through;
+}

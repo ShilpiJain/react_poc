@@ -6,20 +6,21 @@
 // React Router :- Routes, Route prarameters, redirects.
 // Redux :- Stores, actons, reducers
 // Repo :- github.com/iamshaunjp/react-redux-complete-playlist
-// IDE :- Visual Studio
 // 2. How react works -----------------------
 // Vitual DOM
 // Components & template
 // Components looks like HTML template (Actully jsx)
-// they contain state (Data & UI state)
-// they also contain js for functionality
+// They contain state (Data & UI state)
+// They also contain js for functionality
 // 3. React setup -----------------------
 // npm init
-// npm create-react-app
+// npm create-react-app myapp
+// cd myapp 
+// npm start
 // 4. React components  ----------------------- (hands on)
-// class is a reserved keyword in react, we use className 
+// Class is a reserved keyword in react, thats why we use className 
 // curly braces works like template literal can do small logical work
-// 5. state   ----------------------- (hands on)
+// 5. State   ----------------------- (hands on)
 // Name and Age from state
 // 6. React dev tool 
 // React developer tool browser extension
@@ -46,16 +47,20 @@
 // Container Component :-  Contain state, Contain lifecycle hook, not Concerned with UI, use classes to create.
 // UI Component :-  Don't Contain state, Recieve data from props, Concerned UI only, Use function to create
 // 16. Conditional output
-// if condition and ternary operator
+// if condition and ternary operator works in react
 // 17. Form revisited
-// getting value from input on submit and setState
-// 18. function as prop
+// Getting value from input on submit and setState
+// 18. Function as prop
 // Pushing form value (object) in existing array. 
 // 19. Delete data from list
 // Filter to detele object from array
 // 20 Recap vitual DOM
-// 21 css for react application
-// 22  
+// 21 CSS for react application
+// 22  Life cycle hook in react
+// componentDidMount() and omponentDidUpdate()
+// 23 Todos list and delete on click that todo item
+// 24 Add form so user can add todo list
+
 
 
 
@@ -77,8 +82,9 @@ class Learning extends Component {
             { name : "g", age : 24, belt: "red", id: 7 },
             { name : "h", age : 20, belt: "Black", id: 8 },
             { name : "i", age : 30, belt: "Green", id: 9 }
-        ]        
+        ]
     }
+
     handleClick = (e) => {
         this.setState({
             // name : 'Shilpi',
@@ -87,15 +93,19 @@ class Learning extends Component {
         })
         console.log(this.state);
     }
+
     handleMouse(e){
         console.log(e);
     }
+
     handleCopy(e){
         console.log(e);
     }
+
     handleSubmit(e){
         e.preventDefault();
     }
+
     addNinja = (ninja) => {
         ninja.id = this.state.ninjas.length + 1;
         let ninjas = [...this.state.ninjas, ninja];
@@ -113,6 +123,14 @@ class Learning extends Component {
         })
        // console.log(ninjas)
     }
+
+    componentDidMount(){
+        console.log("componentDidMount");
+    }
+    componentDidUpdate(prevProps, prevState){
+        console.log("Component updated");
+        console.log(prevProps, prevState);
+    }
     render() {
         return (
             <div>
@@ -129,7 +147,6 @@ class Learning extends Component {
                 <Ninja ninjas={this.state.ninjas} deteleNinja={this.deteleNinja}/> 
                 <AddNinja addNinja={this.addNinja}/>
             </div>
-            
         )
     }
 }

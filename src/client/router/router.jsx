@@ -4,6 +4,7 @@ import Profile from "../components/profile/profile";
 import Login from "../components/login/login"
 import Learning from "../components/learning/learning";
 import Dashboard from "../components/dashboard/dashboard";
+import Todo from "../components/Todo/todo";
 
 const RenderRoutes  = () => {
     return(
@@ -16,6 +17,7 @@ const RenderRoutes  = () => {
         </main>
     )
 }
+
 export default RenderRoutes;
 
 const routes = [
@@ -43,5 +45,11 @@ const routes = [
         path : "/dashboard",
         exact : true,
         component : Dashboard
+    },
+    {
+        path : "/todo",
+        exact : true,
+        component : Todo
     }
+    
 ]
