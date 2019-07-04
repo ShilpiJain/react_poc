@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
     state = {
         userList : []
     //  userList : data.user
-    }
+    } 
     
     // handleClick = (event) => {
     //     let userProfile = event.target.innerHTML;
