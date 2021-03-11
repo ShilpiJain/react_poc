@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/login-form.scss';
+// import './styles/login-form.scss';
 import "../../shared/style/bootstrap.min.css";
 
 function LoginForm (props) {

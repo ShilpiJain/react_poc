@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './styles/login.scss';
+// import './styles/login.scss';
 import LoginForm from './container/LoginForm';
 import Contants from '../../constants';
 
@@ -55,7 +55,6 @@ class Login extends Component {
         let isValid = {...this.state.isValid};
         let inputValue = e.target.value.trim();
         let isSubmitting = this.state.isSubmitting;
-        debugger;
         if(name === 'username' && inputValue.length >= 8){
             showError[name] = false;
             isSubmitting = false

@@ -41,7 +41,7 @@ const routes = [
     },
     {
         path : "/dashboard",
-        exact : true,
+        exact : false,
         component : Dashboard
     }
 ]

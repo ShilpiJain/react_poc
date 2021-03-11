@@ -61,7 +61,6 @@ class Dashboard extends React.Component {
     }
 
     handleEdit = (id) => {
-        debugger;
         // let userList = this.state.userList;
         // console.log(userList);
         // let editUser = userList.filter( userObj => {
@@ -74,7 +73,6 @@ class Dashboard extends React.Component {
     }
 
     handleDelete = (id) => {
-        debugger;
          let newUserList = this.state.userList.filter( user =>{
              return user.id !== id;
          })

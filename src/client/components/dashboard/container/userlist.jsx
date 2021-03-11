@@ -5,10 +5,10 @@ function Users(props) {
         handleDelete,
         handleEdit
     } = props;
-    const users = props.userList;   
+    const users = props.userList;
     return (
         <div>
-           <h1 className="text-center">Dashboard</h1> 
+           <h1 className="text-center">Dashboard</h1>
             <table className="table">
                 <tbody>
                     {
